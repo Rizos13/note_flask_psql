@@ -1,0 +1,95 @@
+body {
+    background-color: #f4e2e2;
+    color: #4d4d4d;
+    font-family: Futura, sans-serif;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: thistle ;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    flex-direction: row;
+}
+
+.nav-link {
+    margin: 0 50px;
+    text-decoration: none;
+    color: #0b58b6;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.post-form input, .post-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.post-form button {
+    background-color: #d8bfd8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post {
+    background: #e0f4e9;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.post h3 {
+    margin: 0;
+}
+
+.post small {
+    color: #888;
+}
+
+.delete-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 20px;
+}
