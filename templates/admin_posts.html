@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Manage Posts</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Author</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Created At</th>
+                    <th>Visibility</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in posts %}
+                    <tr>
+                        <td>{{ post[0] }}</td>
+                        <td>{{ post[2] }}</td>
+                        <td>{{ post[3] }}</td>
+                        <td>{{ post[4] }}</td>
+                        <td>{{ post[5] }}</td>
+                        <td>{{ 'Visible' if post[6] else 'Hidden' }}</td>
+                        <td>
+                            <form method="POST" action="{{ url_for('admin_posts') }}">
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                                <input type="hidden" name="post_id" value="{{ post[0] }}">
+                                <button type="submit" name="visibility" value="{{ 1 if not post[6] else 0 }}">
+                                    {{ 'Show' if not post[6] else 'Hide' }}
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

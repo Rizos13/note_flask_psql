@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST" action="{{ url_for('login') }}" class="auth-form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required class="input-field">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required class="input-field">
+
+            <button type="submit" class="submit-button">Login</button>
+        </form>
+    </div>
+{% endblock %}
